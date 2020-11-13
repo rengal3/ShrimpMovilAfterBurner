@@ -132,6 +132,7 @@
                         <list>statusbar</list>
                         <list>storage</list>
                     </attachList>
+                    <!--
                     <bundlesList>
                         <list>com.shrimpmovilafterburner.views.inicio</list>
                         <list>com.shrimpmovilafterburner.views.opcion1</list>
@@ -144,6 +145,7 @@
                         <list>com.shrimpmovilafterburner.views.IngresarGramajePresenter</list>
                         <list>com.shrimpmovilafterburner.views.ConsultaEditaGramajePresenter</list>
                     </reflectionList>
+                                        !-->
                     <mainClass>${mainClassName}</mainClass>
                 </configuration>
             </plugin>
