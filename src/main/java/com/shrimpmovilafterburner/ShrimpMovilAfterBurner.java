@@ -22,6 +22,7 @@ public class ShrimpMovilAfterBurner extends MobileApplication {
         ((Stage) scene.getWindow()).getIcons().add(new Image(ShrimpMovilAfterBurner.class.getResourceAsStream("/icon.png")));
     }
 
+    
     public static void main(String args[]) {
         launch(args);
     }

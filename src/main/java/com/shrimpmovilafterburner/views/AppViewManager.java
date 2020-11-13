@@ -22,6 +22,8 @@ public class AppViewManager {
 
     public static final AppView INICIO_VIEW = view("Inicio", InicioPresenter.class, MaterialDesignIcon.HOME, SHOW_IN_DRAWER, HOME_VIEW, SKIP_VIEW_STACK);
     public static final AppView OPCION1_VIEW = view("Opcion1", Opcion1Presenter.class, MaterialDesignIcon.DASHBOARD, SHOW_IN_DRAWER);
+    public static final AppView INGRESAGRAMAJE_VIEW = view("Ingresar Gramaje", IngresarGramajePresenter.class, MaterialDesignIcon.MENU, SHOW_IN_DRAWER);
+    public static final AppView CONSULTAGRAMAJE_VIEW = view("Consulta Gramaje", ConsultaEditaGramajePresenter.class, MaterialDesignIcon.ADD, SKIP_VIEW_STACK);
     
     private static AppView view(String title, Class<? extends GluonPresenter<?>> presenterClass, MaterialDesignIcon menuIcon, AppView.Flag... flags ) {
         return REGISTRY.createView(name(presenterClass), title, presenterClass, menuIcon, flags);
@@ -36,8 +38,8 @@ public class AppViewManager {
             view.registerView(app);
         }
 
-        NavigationDrawer.Header header = new NavigationDrawer.Header("Gluon Mobile",
-                "Multi View Project",
+        NavigationDrawer.Header header = new NavigationDrawer.Header("Shrimp Movil",
+                "Proyecto Movil de Muestra",
                 new Avatar(21, new Image(ShrimpMovilAfterBurner.class.getResourceAsStream("/icon.png"))));
 
         Utils.buildDrawer(app.getDrawer(), header, REGISTRY.getViews()); 

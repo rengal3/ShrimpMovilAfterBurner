@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<View fx:id="consultaeditagrameaje" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shrimpmovilafterburner.views.ConsultaEditaGramajePresenter">
+   <top>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button mnemonicParsing="false" text="Guardar">
+               <graphic>
+                  <Icon content="SAVE" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#btnCancelAction" text="Cancelar">
+               <graphic>
+                  <Icon content="CANCEL" />
+               </graphic>
+            </Button>
+        </buttons>
+      </ButtonBar>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ScrollPane>
+               <content>
+                  <TableView fx:id="tbvgrameajes">
+                    <columns>
+                      <TableColumn fx:id="tblclpiscina" prefWidth="75.0" text="Piscina" />
+                      <TableColumn fx:id="tblclhectarea" prefWidth="75.0" text="Hectarea" />
+                        <TableColumn fx:id="tblcldiascultivo" prefWidth="75.0" text="Dias Cultivo" />
+                        <TableColumn fx:id="tblcllarvas" prefWidth="75.0" text="Larvas" />
+                        <TableColumn fx:id="tblclultimopeso" prefWidth="75.0" text="Ultimo Peso" />
+                        <TableColumn fx:id="tblclgramospromedio" prefWidth="75.0" text="Gramos Promedio" />
+                        <TableColumn fx:id="tblclbiomasa" prefWidth="75.0" text="Biomasa" />
+                         <TableColumn fx:id="tblclsobrevivientes" prefWidth="75.0" text="Sobrevivientes" />
+                        <TableColumn fx:id="tblclanimales" prefWidth="75.0" text="Animales" />
+                        <TableColumn fx:id="tblclincremento" prefWidth="75.0" text="Incremento" />
+                        <TableColumn fx:id="tblclcomentario" prefWidth="75.0" text="Comentario" />                        
+                    </columns>
+                  </TableView>
+               </content>
+            </ScrollPane>
+         </children>
+      </GridPane>
+   </center>
+</View>
