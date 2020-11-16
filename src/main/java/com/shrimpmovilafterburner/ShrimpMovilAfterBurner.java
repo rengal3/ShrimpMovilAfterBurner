@@ -18,7 +18,7 @@ public class ShrimpMovilAfterBurner extends MobileApplication {
     public void postInit(Scene scene) {
         Swatch.BLUE.assignTo(scene);
 
-        scene.getStylesheets().add(ShrimpMovilAfterBurner.class.getResource("style.css").toExternalForm());
+        scene.getStylesheets().add(ShrimpMovilAfterBurner.class.getResource("style.css").toExternalForm());        
         ((Stage) scene.getWindow()).getIcons().add(new Image(ShrimpMovilAfterBurner.class.getResourceAsStream("/icon.png")));
     }
 
