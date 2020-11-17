@@ -1,0 +1,44 @@
+[
+  {
+    "name":"javafx.beans.NamedArg",
+    "allDeclaredMethods":true
+  }
+,
+  {
+    "name" : "javafx.scene.text.Font",
+    "methods":[
+      {"name":"<init>","parameterTypes":["double"] },
+      {"name":"<init>","parameterTypes":["java.lang.String","double"] },
+      {"name":"font","parameterTypes":["java.lang.String"] },
+      {"name":"font","parameterTypes":["double"] },
+      {"name":"font","parameterTypes":["java.lang.String","double"] },
+      {"name":"getSize","parameterTypes":[] },
+      {"name":"getName","parameterTypes":[] }
+    ]
+  }
+,
+  {
+    "name" : "javafx.scene.shape.StrokeType",
+    "methods":[
+      {"name":"valueOf","parameterTypes":["java.lang.String"] },
+      {"name":"values","parameterTypes":[] }
+    ]
+  }
+,
+ {
+    "name":"com.gluonhq.charm.glisten.visual.MaterialDesignIcon",
+    "methods":[
+      {"name":"valueOf","parameterTypes":["java.lang.String"] }
+    ]
+  }
+,
+  {
+    "name":"com.gluonhq.charm.glisten.control.Icon",
+    "methods":[
+      {"name":"<init>","parameterTypes":[] },
+      {"name":"<init>","parameterTypes":["com.gluonhq.charm.glisten.visual.MaterialDesignIcon"] },
+      {"name":"getContent","parameterTypes":[] },
+      {"name":"setContent","parameterTypes":["com.gluonhq.charm.glisten.visual.MaterialDesignIcon"] }
+    ]
+  }
+]

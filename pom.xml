@@ -86,13 +86,13 @@
             <artifactId>jakarta.json</artifactId>
             <version>1.1.6</version>
             <classifier>module</classifier>
-            <scope>runtime</scope>
+            <!--<scope>runtime</scope> !-->
         </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
             <version>2.3.1</version>
-            <scope>runtime</scope>
+            <!--<scope>runtime</scope> !-->
         </dependency>
     </dependencies>
 
@@ -137,17 +137,39 @@
                         <list>com.shrimpmovilafterburner.views.inicio</list>
                         <list>com.shrimpmovilafterburner.views.opcion1</list>                        
                         <list>com.shrimpmovilafterburner.views.ingresargramaje</list>
-                        <list>com.shrimpmovilafterburner.views.consultaeditagramaje</list>
-                                      <!--           !-->
+                        <list>com.shrimpmovilafterburner.views.consultaeditagramaje</list>                                      <!--           !-->
                     </bundlesList>
                     <reflectionList>
+                        <list>javafx.fxml.FXMLLoader</list>
+                        <list>javafx.fxml.FXML</list>
+                        <list>javafx.scene.layout.HBox</list>
+                        <list>javafx.scene.layout.VBox</list>
+                        <list>javafx.scene.control.ComboBox</list>
+                        <list>javafx.scene.control.TextField</list>
+                        <list>javafx.scene.control.ButtonBar</list>    
+                        <list>javafx.scene.control.TableColumn</list>
+                        <list>javafx.scene.control.TableColumnBase</list>
+                        <list>javafx.scene.control.TableView</list>                    
+                        <list>javafx.scene.control.ScrollPane</list> 
+                        <list>com.shrimpmovilafterburner.TO.CboEmpresaTO</list>
+                        <list>com.shrimpmovilafterburner.TO.DatosEmpresaTO</list>
+                        <list>com.shrimpmovilafterburner.TO.DatosSectorTO</list>
+                        <list>com.shrimpmovilafterburner.TO.DatosTablaGramajeTO</list>
+                        <list>com.shrimpmovilafterburner.TO.EmpCodigoTO</list>
+                        <list>com.shrimpmovilafterburner.TO.ListaSisPermisoTO</list>
+                        <list>com.shrimpmovilafterburner.TO.ParamDataCBoEmpresaTO</list>
+                        <list>com.shrimpmovilafterburner.TO.ParamDataCBoSectorTO</list>
+                        <list>com.shrimpmovilafterburner.TO.ParamDataViewTablaGramajeTO</list>
+                        <list>com.shrimpmovilafterburner.TO.ParametroTO</list>
+                        <list>com.shrimpmovilafterburner.TO.SisInfoTO</list>
                         <list>com.shrimpmovilafterburner.views.InicioPresenter</list>
                         <list>com.shrimpmovilafterburner.views.Opcion1Presenter</list>                        
                         <list>com.shrimpmovilafterburner.views.IngresarGramajePresenter</list>
-                        <list>com.shrimpmovilafterburner.views.ConsultaEditaGramajePresenter</list>
-                                       <!--          !-->
-                    </reflectionList>
-                                       
+                        <list>com.shrimpmovilafterburner.views.ConsultaEditaGramajePresenter</list>  
+                        <list>com.shrimpmovilafterburner.rest.PruebasRest</list>
+                        
+                        <!--          !-->
+                    </reflectionList>                                       
                     <mainClass>${mainClassName}</mainClass>
                 </configuration>
             </plugin>
