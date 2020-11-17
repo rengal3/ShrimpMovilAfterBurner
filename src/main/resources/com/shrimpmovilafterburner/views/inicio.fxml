@@ -18,7 +18,7 @@
                   <Icon content="LANGUAGE" />
                </graphic>
             </Button>
-            <ComboBox prefWidth="150.0" promptText="elija empresa" />
+            <ComboBox pickOnBounds="false" prefWidth="150.0" promptText="elija empresa" />
          </children>
       </VBox>
    </center>
