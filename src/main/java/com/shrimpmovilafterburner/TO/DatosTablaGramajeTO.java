@@ -8,6 +8,8 @@ package com.shrimpmovilafterburner.TO;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.LongProperty;
+import javafx.beans.property.ReadOnlyDoubleProperty;
+import javafx.beans.property.ReadOnlyDoubleWrapper;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleLongProperty;
@@ -34,6 +36,15 @@ public class DatosTablaGramajeTO {
     private final DoubleProperty graAnimalesM2 = new SimpleDoubleProperty();
     private final DoubleProperty graSobrevivencia = new SimpleDoubleProperty();   
     private final StringProperty graComentario = new SimpleStringProperty();
+     
+    
+    private final ReadOnlyDoubleWrapper graIncremento = new ReadOnlyDoubleWrapper();  
+    
+    private boolean guardar=false;
+    
+    public DatosTablaGramajeTO(){
+        graIncremento.bind(graPesoActualProperty().subtract(graPesoAnteriorProperty()));
+    }
     
     public StringProperty idProperty() {
         return id;
@@ -148,7 +159,7 @@ public class DatosTablaGramajeTO {
         return graPesoActual.get();
     }
     
-    public void setGraPesoActual(Double graPesoActual) {
+    public void setGraPesoActual(Double graPesoActual) {        
         this.graPesoActual.set(graPesoActual);
     }
     
@@ -203,5 +214,29 @@ public class DatosTablaGramajeTO {
     public void setGraComentario(String graComentario) {
         this.graComentario.set(graComentario);
     }
+    
+     public ReadOnlyDoubleProperty graIncrementoProperty() {
+        return this.graIncremento.getReadOnlyProperty();
+    }
+    
+    public Double getGraIngremento() {
+        return this.graIncremento.get();
+    }
+
+    public boolean isGuardar() {
+        return guardar;
+    }
+
+    public void setGuardar() {
+        this.guardar = true;
+    }
+
+    @Override
+    public String toString() {
+        return this.getGraPiscinaNombre()+" - peso actual: "+this.getGraPesoActual()+
+                " - sobrevivientes: "+this.getGraSobrevivencia()+" - animales: "+
+                this.getGraAnimalesM2()+" - comentario: "+this.getGraComentario();
+    }
+    
     
 }

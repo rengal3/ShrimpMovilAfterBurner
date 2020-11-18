@@ -16,12 +16,12 @@
    <top>
       <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <buttons>
-          <Button mnemonicParsing="false" text="Guardar">
+          <Button fx:id="btnGuarda" mnemonicParsing="false" onAction="#btnGuardarAction" text="Guardar">
                <graphic>
                   <Icon content="SAVE" />
                </graphic>
             </Button>
-            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#btnCancelAction" text="Cancelar">
+            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#btnCancelaAction" text="Cancelar">
                <graphic>
                   <Icon content="CANCEL" />
                </graphic>

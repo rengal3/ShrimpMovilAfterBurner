@@ -36,6 +36,7 @@ public class IngresarGramajePresenter extends GluonPresenter<ShrimpMovilAfterBur
        
     public void initialize() {
         ingresargramaje.setShowTransitionFactory(BounceInRightTransition::new);
+        cmbEmpresa.setVisibleRowCount(10);
         cmbEmpresa.setItems(PruebasRest.getListaEmpresasTORest());
         
         datePicker = new DatePicker();  
@@ -82,13 +83,14 @@ public class IngresarGramajePresenter extends GluonPresenter<ShrimpMovilAfterBur
     
     @FXML
     void botonBuscarClick() {
+        String idempresa=this.cmbEmpresa.getSelectionModel().getSelectedItem().getEmpCodigo();
+        String codsector=this.cmbSector.getSelectionModel().getSelectedItem().getSecCodigo();
+        String fecha=this.txfFecha.getText().trim();
         GluonObservableList<DatosTablaGramajeTO> listaDatos=PruebasRest.getDatosTablaGramajeTORest(
-                this.cmbEmpresa.getSelectionModel().getSelectedItem().getEmpCodigo(), 
-                this.cmbSector.getSelectionModel().getSelectedItem().getSecCodigo(), 
-                this.txfFecha.getText().trim());
+                idempresa,codsector,fecha);
         AppViewManager.CONSULTAGRAMAJE_VIEW.switchView().
                ifPresent(presenter -> 
-            ((ConsultaEditaGramajePresenter) presenter).llenaTablaGramaje(listaDatos));
+            ((ConsultaEditaGramajePresenter) presenter).llenaTablaGramaje(listaDatos,idempresa,codsector,fecha));
              
         //MobileApplication.getInstance().switchView(ShrimpGluonProject1.CONSULTAEDITAGRAMAJE_VIEW);
         /*ConsultaEditaGramajePresenter.listaDatos=PruebasRest.getDatosTablaGramajeTORest(

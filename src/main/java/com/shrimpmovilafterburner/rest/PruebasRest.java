@@ -13,9 +13,17 @@ import com.gluonhq.connect.provider.RestClient;
 import com.shrimpmovilafterburner.TO.DatosEmpresaTO;
 import com.shrimpmovilafterburner.TO.DatosSectorTO;
 import com.shrimpmovilafterburner.TO.DatosTablaGramajeTO;
+import com.shrimpmovilafterburner.TO.GrameajeParamRestTO;
 import com.shrimpmovilafterburner.TO.ParamDataCBoEmpresaTO;
 import com.shrimpmovilafterburner.TO.ParamDataCBoSectorTO;
+import com.shrimpmovilafterburner.TO.ParamDataSaveTablaGramajeTO;
 import com.shrimpmovilafterburner.TO.ParamDataViewTablaGramajeTO;
+import com.shrimpmovilafterburner.TO.PrdGrameajePK_RestTO;
+import com.shrimpmovilafterburner.TO.PrdPiscinaPK_RestTO;
+import com.shrimpmovilafterburner.TO.PrdPiscina_RestTO;
+import com.shrimpmovilafterburner.TO.PrdSectorPK_RestTO;
+import com.shrimpmovilafterburner.TO.PrdSectorTO;
+import com.shrimpmovilafterburner.TO.RespuestaOperacionRestTO;
 import com.shrimpmovilafterburner.TO.SisInfoTO;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -183,9 +191,70 @@ public class PruebasRest {
         }catch(Exception e){
             e.printStackTrace();
         }
-        return lista;
-                
-        
+        return lista;                        
+    }
+     
+     
+     public static RespuestaOperacionRestTO setDatosTablaGramajeTORest(String codEmpresa, String codSector,String fecha, List<DatosTablaGramajeTO> listaGuardar){      
+        RespuestaOperacionRestTO respuesta=null;
+        try{
+            SisInfoTO sis=new SisInfoTO();
+            List<GrameajeParamRestTO> listaGrameajes=new ArrayList<GrameajeParamRestTO>();
+            ParamDataSaveTablaGramajeTO paramData=new ParamDataSaveTablaGramajeTO();  
+            
+            paramData.setFecha(fecha);            
+            sis.setEmpresa(codEmpresa);
+            sis.setUsuarioCompleto("SOPORTE OWS");
+            sis.setUsuario("SOPORTE");
+            sis.setUsuarioNick("soporte");
+            sis.setMac("");
+            sis.setEmpresaRuc(null);
+            sis.setAmbiente("WEB");
+            sis.setImagen("");
+            sis.setEmail("soporte@obinte.com");
+            sis.setTelefono(null);           
+            paramData.setSisInfoTO(sis);
+
+            for(DatosTablaGramajeTO datoGuardar:listaGuardar){
+                GrameajeParamRestTO dato=new GrameajeParamRestTO();
+                dato.setPrdGrameajePK(new PrdGrameajePK_RestTO(codEmpresa, codSector, datoGuardar.getGraPiscinaCodigo()));
+                dato.setGraTpromedio(datoGuardar.getGraPesoActual());
+                dato.setGraTgrande(datoGuardar.getGraPesoActual());
+                dato.setGraIpromedio(datoGuardar.getGraPesoActual());
+                dato.setGraItgrande(datoGuardar.getGraPesoActual());
+                dato.setGraSobrevivencia(dato.getGraSobrevivencia());                 
+                dato.setGraComentario(dato.getGraComentario());
+                PrdPiscina_RestTO piscina=new PrdPiscina_RestTO();
+                PrdSectorTO sector=new PrdSectorTO();
+                sector.setPrdSectorPK(new PrdSectorPK_RestTO());
+                piscina.setPisNombre(datoGuardar.getGraPiscinaNombre());
+                piscina.setPrdPiscinaPK(new PrdPiscinaPK_RestTO(codEmpresa, codSector, datoGuardar.getGraPiscinaCodigo()));
+                piscina.setPrdSector(sector);
+                dato.setPrdPiscina(piscina);
+                listaGrameajes.add(dato);
+            }
+            paramData.setListaGrameajes(listaGrameajes);
+            JsonConverter jxb=new JsonConverter(ParamDataSaveTablaGramajeTO.class);
+            JsonObject jsonob=jxb.writeToJson(paramData);
+            
+            System.out.println(jsonob.toString());
+            
+
+            RestClient restClient = RestClient.create()
+                    .method("POST")
+                    .host("https://test.acosux.com")
+                    .path("/Pruebas/todocompuWS/produccionWebController/insertarGrameajeListado")
+                    .contentType("application/json")
+                    .dataString(jsonob.toString()) ;
+            
+            respuesta=restClient.createObjectDataReader(RespuestaOperacionRestTO.class).readObject();
+            
+            
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return respuesta;                        
     }
     public static GluonObservableList<DatosEmpresaTO> getListaEmpresasTO(){
         GluonObservableList<DatosEmpresaTO> errors=new GluonObservableList();
