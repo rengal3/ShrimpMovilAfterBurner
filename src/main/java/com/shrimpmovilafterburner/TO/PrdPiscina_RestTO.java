@@ -25,7 +25,7 @@ public class PrdPiscina_RestTO implements Serializable{
     private boolean pisActiva=false;
     private String usrEmpresa="";
     private String usrCodigo="";
-    private String usrFechaInserta= ((new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'"))).format(new Date());;
+    private String usrFechaInserta= null;//((new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'"))).format(new Date());;
     private String ctaCostoDirecto="";
     private String ctaCostoIndirecto="";
     private String ctaCostoTransferencia="";

@@ -66,7 +66,7 @@ public class InicioPresenter extends GluonPresenter<ShrimpMovilAfterBurner> {
             }
         });
     }
-    
+       
     @FXML
     void buttonClick() {
         label.setText(resources.getString("label.text.2"));

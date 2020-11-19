@@ -38,8 +38,8 @@ public class GrameajeParamRestTO implements Serializable{
     private boolean graAnulado=false;
     private String usrEmpresa="";
     private String usrCodigo="";
-    private String  usrFechaInserta=
-            ((new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'"))).format(new Date());
+    private String  usrFechaInserta=null;
+            //((new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'"))).format(new Date());
     
     private PrdPiscina_RestTO prdPiscina;
 

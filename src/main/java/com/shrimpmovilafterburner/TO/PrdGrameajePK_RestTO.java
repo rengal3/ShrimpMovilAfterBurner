@@ -22,17 +22,18 @@ public class PrdGrameajePK_RestTO implements Serializable{
     private String graEmpresa;
     private String graSector;
     private String graPiscina;
-    private String graFecha= ((new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'"))).format(new Date());
+    private long graFecha;
 
     public PrdGrameajePK_RestTO(){
         
     }
     
-     public PrdGrameajePK_RestTO(String idempresa, String codsector,String idpiscina){
+     public PrdGrameajePK_RestTO(String idempresa, String codsector,String idpiscina,long fecha){
         
         this.graEmpresa=idempresa;
         this.graSector=codsector;
-        this.graPiscina=idpiscina;                
+        this.graPiscina=idpiscina;  
+        this.graFecha=fecha;
     }
     
     public String getGraEmpresa() {
@@ -59,13 +60,15 @@ public class PrdGrameajePK_RestTO implements Serializable{
         this.graPiscina = graPiscina;
     }
 
-    public String getGraFecha() {
+    public Long getGraFecha() {
         return graFecha;
     }
 
-    public void setGraFecha(String graFecha) {
+    public void setGraFecha(Long graFecha) {
         this.graFecha = graFecha;
     }
+
+  
     
     
     
