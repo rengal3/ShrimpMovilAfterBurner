@@ -164,6 +164,7 @@
                         <list>com.shrimpmovilafterburner.TO.ParamDataViewTablaGramajeTO</list>
                         <list>com.shrimpmovilafterburner.TO.ParametroTO</list>
                         <list>com.shrimpmovilafterburner.TO.SisInfoTO</list>
+                        <list>com.shrimpmovilafterburner.TO.RespuestaOperacionRestTO</list>                        
                         <list>com.shrimpmovilafterburner.views.InicioPresenter</list>
                         <list>com.shrimpmovilafterburner.views.Opcion1Presenter</list>                        
                         <list>com.shrimpmovilafterburner.views.IngresarGramajePresenter</list>
