@@ -180,11 +180,19 @@ public class ConsultaEditaGramajePresenter extends GluonPresenter<ShrimpMovilAft
     
     @FXML
     void btnGuardarAction() {
+        boolean confirmaBtn=false;
         Alert confirma = new Alert(javafx.scene.control.Alert.AlertType.CONFIRMATION, 
                 "¿Desea guardar los cambios?");
         confirma.showAndWait().ifPresent(result -> {            
             if (result == ButtonType.OK) {                                 
-                List<DatosTablaGramajeTO> listaGuardar=new ArrayList<DatosTablaGramajeTO>();
+                this.guardarListaGramaje();
+            }
+         });
+
+    }
+    
+    void guardarListaGramaje(){
+        List<DatosTablaGramajeTO> listaGuardar=new ArrayList<DatosTablaGramajeTO>();
                 for(DatosTablaGramajeTO in:this.tbvgrameajes.getItems()){
                     if(in.isGuardar()){
                         listaGuardar.add(in);                
@@ -201,10 +209,13 @@ public class ConsultaEditaGramajePresenter extends GluonPresenter<ShrimpMovilAft
                 if (retorno ==null){
                     Alert alert = new Alert(javafx.scene.control.Alert.AlertType.ERROR, "Hubo errores al guardar los datos\nProblemas de conexion");
                     alert.showAndWait();
-                }else{
-                    if(retorno.getOperacionMensaje().contains("ERROR")){
+                }else{                                        
+                    if(retorno.getEstadoOperacion().contains("ERROR")){
+                        String retornoS=retorno.getOperacionMensaje();
+                        if(retornoS==null)
+                            retornoS="";
                         Alert alert = new Alert(javafx.scene.control.Alert.AlertType.ERROR,
-                            "Error al guardar los datos\n"+retorno.getOperacionMensaje());
+                            "Error al guardar los datos\n"+retornoS);
                         alert.showAndWait();
                     }else{
                         Alert alert = new Alert(javafx.scene.control.Alert.AlertType.INFORMATION,
@@ -213,10 +224,6 @@ public class ConsultaEditaGramajePresenter extends GluonPresenter<ShrimpMovilAft
                     }
 
                 }
-
-            }
-         });
-
     }
     
     @FXML

@@ -346,6 +346,7 @@ public class PruebasRest {
             JsonConverter jxb=new JsonConverter(ParamDataSaveTablaGramajeTO.class);
             JsonObject jsonob=jxb.writeToJson(paramData);
 
+            System.out.println(jsonob.toString());
             RestClient restClient = RestClient.create()
                     .method("POST")
                     .host("https://test.acosux.com")

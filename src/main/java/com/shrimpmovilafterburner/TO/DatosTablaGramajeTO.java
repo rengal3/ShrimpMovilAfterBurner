@@ -147,6 +147,8 @@ public class DatosTablaGramajeTO {
     }
     
     public void setGraPesoAnterior(Double graPesoAnterior) {
+        if(graPesoAnterior==null)
+            graPesoAnterior=Double.valueOf(0);
         this.graPesoAnterior.set(graPesoAnterior);
     }
     

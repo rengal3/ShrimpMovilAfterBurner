@@ -165,6 +165,13 @@
                         <list>com.shrimpmovilafterburner.TO.ParametroTO</list>
                         <list>com.shrimpmovilafterburner.TO.SisInfoTO</list>
                         <list>com.shrimpmovilafterburner.TO.RespuestaOperacionRestTO</list>                        
+                        <list>com.shrimpmovilafterburner.TO.ParamDataSaveTablaGramajeTO</list>                        
+                        <list>com.shrimpmovilafterburner.TO.GrameajeParamRestTO</list>                        
+                        <list>com.shrimpmovilafterburner.TO.PrdGrameajePK_RestTO</list>                        
+                        <list>com.shrimpmovilafterburner.TO.PrdPiscina_RestTO</list>                        
+                        <list>com.shrimpmovilafterburner.TO.PrdPiscinaPK_RestTO</list> 
+                        <list>com.shrimpmovilafterburner.TO.PrdSectorTO</list>                          
+                        <list>com.shrimpmovilafterburner.TO.PrdSectorPK_RestTO</list> 
                         <list>com.shrimpmovilafterburner.views.InicioPresenter</list>
                         <list>com.shrimpmovilafterburner.views.Opcion1Presenter</list>                        
                         <list>com.shrimpmovilafterburner.views.IngresarGramajePresenter</list>
