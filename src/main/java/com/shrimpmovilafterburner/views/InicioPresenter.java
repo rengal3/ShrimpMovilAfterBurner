@@ -62,7 +62,7 @@ public class InicioPresenter extends GluonPresenter<ShrimpMovilAfterBurner> {
                         getApp().getDrawer().open()));
                 appBar.setTitleText("Inicio");
                 appBar.getActionItems().add(MaterialDesignIcon.SEARCH.button(e -> 
-                        System.out.println("Search")));
+                        System.out.println("click en buscar")));
             }
         });
     }

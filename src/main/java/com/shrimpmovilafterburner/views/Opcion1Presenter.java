@@ -28,7 +28,7 @@ public class Opcion1Presenter extends GluonPresenter<ShrimpMovilAfterBurner> {
                         getApp().getDrawer().open()));
                 appBar.setTitleText("Opcion1");
                 appBar.getActionItems().add(MaterialDesignIcon.FAVORITE.button(e -> 
-                        System.out.println("Favorite")));
+                        System.out.println("click en favoritos")));
             }
         });
     }

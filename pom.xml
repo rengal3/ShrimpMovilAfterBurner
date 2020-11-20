@@ -135,9 +135,7 @@
                     
                     <bundlesList>
                         <list>com.shrimpmovilafterburner.views.inicio</list>
-                        <list>com.shrimpmovilafterburner.views.opcion1</list>                        
-                        <list>com.shrimpmovilafterburner.views.ingresargramaje</list>
-                        <list>com.shrimpmovilafterburner.views.consultaeditagramaje</list>                                      <!--           !-->
+                        <list>com.shrimpmovilafterburner.views.opcion1</list>                                                                                     <!--           !-->
                     </bundlesList>
                     <reflectionList>
                         <list>javafx.fxml.FXMLLoader</list>
@@ -153,6 +151,7 @@
                         <list>javafx.scene.control.TableColumnBase</list>
                         <list>javafx.scene.control.TableView</list>                    
                         <list>javafx.scene.control.ScrollPane</list> 
+                        <list>com.gluonhq.charm.glisten.control.TextField</list> 
                         <list>com.shrimpmovilafterburner.TO.CboEmpresaTO</list>
                         <list>com.shrimpmovilafterburner.TO.DatosEmpresaTO</list>
                         <list>com.shrimpmovilafterburner.TO.DatosSectorTO</list>
@@ -176,6 +175,7 @@
                         <list>com.shrimpmovilafterburner.views.Opcion1Presenter</list>                        
                         <list>com.shrimpmovilafterburner.views.IngresarGramajePresenter</list>
                         <list>com.shrimpmovilafterburner.views.ConsultaEditaGramajePresenter</list>  
+                        <list>com.shrimpmovilafterburner.views.LoginPresenter</list>  
                         <list>com.shrimpmovilafterburner.rest.PruebasRest</list>
                         
                         <!--          !-->
