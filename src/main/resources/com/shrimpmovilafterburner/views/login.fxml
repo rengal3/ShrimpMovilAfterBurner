@@ -59,7 +59,7 @@
                   </VBox>
                   <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="163.0">
                      <children>
-                        <TextField fx:id="txtUsuario" floatText="ingrese usuario" prefHeight="50.0">
+                        <TextField fx:id="txtUsuario" floatText="ingrese usuario" onTouchPressed="#txtUsuarioTouchAction" prefHeight="50.0">
                            <padding>
                               <Insets top="20.0" />
                            </padding>

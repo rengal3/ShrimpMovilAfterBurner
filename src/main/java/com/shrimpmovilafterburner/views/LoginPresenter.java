@@ -79,4 +79,10 @@ public class LoginPresenter extends GluonPresenter<ShrimpMovilAfterBurner>{
        
     }
     
+    @FXML
+    void txtUsuarioTouchAction() {    
+        txtUsuario.requestFocus();        
+    }
+        
+    
 }
