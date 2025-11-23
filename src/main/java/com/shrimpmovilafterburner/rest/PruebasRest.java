@@ -305,6 +305,8 @@ public class PruebasRest {
             cal.set(Integer.valueOf(val[0]).intValue(),Integer.valueOf(val[1]).intValue(),Integer.valueOf(val[2]).intValue());
             Date dFecha=cal.getTime();
             
+            
+            
             SisInfoTO sis=new SisInfoTO();
             List<GrameajeParamRestTO> listaGrameajes=new ArrayList<GrameajeParamRestTO>();
             ParamDataSaveTablaGramajeTO paramData=new ParamDataSaveTablaGramajeTO();              
